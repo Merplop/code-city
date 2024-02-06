@@ -14,15 +14,33 @@ import javafx.scene.shape.Rectangle;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Class handling JavaFX application for visualizing class information as buildings.
+ */
+
 public class Window extends Application {
+
+    // X and Y components for canvas size
+
     int x = 750;
     int y = 750;
+
+    // fixed building width
+
     final int BUILDING_WIDTH = 100;
     ArrayList<DummyBuilding> buildings = new ArrayList<>();
     ArrayList<BuildingFrontEnd> buildingFrontEnds = new ArrayList<>();
     ArrayList<String> superClasses = new ArrayList<>();
     Canvas canvas;
     Pane root;
+
+    /**
+     * JavaFX application entry point
+     *
+     * @param stage The primary stage for this application
+     * @throws IOException If an I/O error occurs
+     */
+
     @Override
     public void start(Stage stage) throws IOException {
 
@@ -58,6 +76,12 @@ public class Window extends Application {
         //Displaying the contents of the stage
         stage.show();
     }
+
+    /**
+     * Draw buildings and display textual information on the canvas based on class information
+     *
+     * @param gc The GraphicsContext used for drawing on the canvas
+     */
 
     public void drawBuildings(GraphicsContext gc) {
 
